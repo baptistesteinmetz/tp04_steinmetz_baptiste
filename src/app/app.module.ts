@@ -13,7 +13,7 @@ import { FormsModule, ReactiveFormsModule  } from '@angular/forms';
 import { ProductListComponent } from './product-list/product-list.component';
 import { SearchBarComponent } from './search-bar/search-bar.component';
 import { RouterModule, Routes } from '@angular/router';
-import { StoreBasketComponent } from './store-basket/store-basket.component';
+import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
 
 const appRoutes: Routes = [
@@ -33,7 +33,7 @@ const appRoutes: Routes = [
     CodePipe,
     ProductListComponent,
     SearchBarComponent,
-    StoreBasketComponent,
+    ShoppingCartComponent,
     ProductDetailComponent,
   ],
   imports: [
