@@ -35,7 +35,7 @@ export class SearchBarComponent implements OnInit {
   onSearchProducts() : void
   {
     // on input change we search products and update the view
-    this.productService.searchProduct(this.searchInput).subscribe();
+    this.productService.searchProduct(this.searchInput.toLowerCase()).subscribe();
   }
 
   onFilterPriceProducts() : void {
