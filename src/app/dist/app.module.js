@@ -7,6 +7,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 exports.__esModule = true;
 exports.AppModule = void 0;
+var animations_1 = require("@angular/platform-browser/animations");
 var http_1 = require("@angular/common/http");
 var customdirectives_directive_1 = require("./customdirectives.directive");
 var platform_browser_1 = require("@angular/platform-browser");
@@ -26,6 +27,7 @@ var product_detail_component_1 = require("./product-detail/product-detail.compon
 var appRoutes = [
     { path: 'tp02', component: form_component_1.FormComponent },
     { path: 'tp03', component: product_list_component_1.ProductListComponent },
+    { path: 'tp04', component: shopping_cart_component_1.ShoppingCartComponent },
     { path: '', component: product_list_component_1.ProductListComponent }
 ];
 var AppModule = /** @class */ (function () {
@@ -48,6 +50,7 @@ var AppModule = /** @class */ (function () {
                 product_detail_component_1.ProductDetailComponent,
             ],
             imports: [
+                animations_1.NoopAnimationsModule,
                 platform_browser_1.BrowserModule,
                 forms_1.FormsModule,
                 forms_1.ReactiveFormsModule,

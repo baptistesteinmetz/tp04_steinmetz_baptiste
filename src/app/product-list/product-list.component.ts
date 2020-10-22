@@ -15,12 +15,12 @@ export class ProductListComponent implements OnInit {
   products: Observable<Product[]> = this.productService.getSearchResults();
   productSubscription: Subscription;
 
-  loaded : boolean = false;
+  loaded : boolean = true;
   constructor(private productService: ProductService) { }
 
   ngOnInit(): void {
-    setTimeout(() => {
-      this.loaded = true;
-    }, 3000);
+    // setTimeout(() => {
+    //   // this.loaded = true;
+    // }, 3000);
   }
 }

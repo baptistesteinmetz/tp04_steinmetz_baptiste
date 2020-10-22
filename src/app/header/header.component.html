@@ -1,0 +1,14 @@
+<nav>
+    <span>Liste des TPs WEB:</span>
+    <ul>
+        <li routerLinkActive="active">
+            <a routerLink="tp02">Home</a>
+        </li>
+        <li routerLinkActive="active">
+            <a routerLink="tp03">Store</a>
+        </li>
+        <li [routerLinkActive]="['active', 'non-active']">
+            <a routerLink="tp04">Cart</a>
+        </li>
+    </ul>
+</nav>

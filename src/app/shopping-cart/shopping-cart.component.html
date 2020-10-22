@@ -1,1 +1,10 @@
-<p>store-basket works!</p>
+<div [@hide]="stateHide">
+    <div class="hide-cart" (click)="hideCart($event)"><i class="fa" [ngClass]="stateHide == 'active' ?' fa-long-arrow-left' : 'fa-long-arrow-right'" aria-hidden="true"></i>
+    </div>
+    <h1 class="cart-title">Shopping Cart !<i class="fa fa-shopping-cart" aria-hidden="true"></i></h1>
+
+    <div class="cart-list">
+        <span *ngIf="empty">Your cart is empty... Time to shop. <i class="fa fa-frown-o" aria-hidden="true"></i>
+      </span>
+    </div>
+</div>

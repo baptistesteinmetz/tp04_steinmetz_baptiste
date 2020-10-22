@@ -1,0 +1,26 @@
+nav {
+  background-color: #23758E;
+  min-height: 40px;
+  display: flex;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.44);
+  align-items: center;
+  padding-left: 35px;
+  color: white;
+  font-family: Arial;
+}
+nav ul {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+nav ul li {
+  margin: 5px;
+  padding-left: 10px;
+}
+nav ul li.active {
+  font-weight: bold;
+}
+nav ul li a {
+  text-decoration: none;
+  color: white;
+}
