@@ -7,6 +7,8 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 exports.__esModule = true;
 exports.AppModule = void 0;
+var product_state_1 = require("./../shared/states/product-state");
+var store_1 = require("@ngxs/store");
 var animations_1 = require("@angular/platform-browser/animations");
 var http_1 = require("@angular/common/http");
 var customdirectives_directive_1 = require("./customdirectives.directive");
@@ -24,6 +26,7 @@ var search_bar_component_1 = require("./search-bar/search-bar.component");
 var router_1 = require("@angular/router");
 var shopping_cart_component_1 = require("./shopping-cart/shopping-cart.component");
 var product_detail_component_1 = require("./product-detail/product-detail.component");
+var header_component_1 = require("./header/header.component");
 var appRoutes = [
     { path: 'tp02', component: form_component_1.FormComponent },
     { path: 'tp03', component: product_list_component_1.ProductListComponent },
@@ -48,6 +51,7 @@ var AppModule = /** @class */ (function () {
                 search_bar_component_1.SearchBarComponent,
                 shopping_cart_component_1.ShoppingCartComponent,
                 product_detail_component_1.ProductDetailComponent,
+                header_component_1.HeaderComponent,
             ],
             imports: [
                 animations_1.NoopAnimationsModule,
@@ -55,6 +59,10 @@ var AppModule = /** @class */ (function () {
                 forms_1.FormsModule,
                 forms_1.ReactiveFormsModule,
                 http_1.HttpClientModule,
+                store_1.NgxsModule,
+                store_1.NgxsModule.forRoot([
+                    product_state_1.ProductState
+                ]),
                 router_1.RouterModule.forRoot(appRoutes),
             ],
             providers: [get_products_service_1.ProductService],

@@ -7,13 +7,21 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 exports.__esModule = true;
 exports.ProductListComponent = void 0;
+var product_action_1 = require("./../../shared/actions/product-action");
 var core_1 = require("@angular/core");
 var ProductListComponent = /** @class */ (function () {
-    function ProductListComponent(productService) {
+    function ProductListComponent(productService, store) {
         this.productService = productService;
+        this.store = store;
         this.products = this.productService.getSearchResults();
         this.loaded = true;
     }
+    ProductListComponent.prototype.onClickAdd = function (product) {
+        this.addProduct(product.id, product.name, product.price, product.src, product.description, product.backgroundLight, product.backgroundDark);
+    };
+    ProductListComponent.prototype.addProduct = function (id, name, price, src, description, backgroundLight, backgroundDark) {
+        this.store.dispatch(new product_action_1.AddProduct({ id: id, name: name, price: price, src: src, description: description, backgroundLight: backgroundLight, backgroundDark: backgroundDark }));
+    };
     ProductListComponent.prototype.ngOnInit = function () {
         // setTimeout(() => {
         //   // this.loaded = true;

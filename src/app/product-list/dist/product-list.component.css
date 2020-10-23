@@ -29,7 +29,6 @@
 #product-list {
   display: flex;
   transition: all 1s ease-in;
-  height: 100%;
   opacity: 0;
   flex-wrap: wrap;
 }
@@ -81,7 +80,11 @@
   justify-content: space-between;
   flex-direction: column;
 }
-.product .product-info button.product-buy-btn {
+.product .product-info .product-action {
+  display: flex;
+  justify-content: space-between;
+}
+.product .product-info .product-action button.btn-product {
   align-self: end;
   padding: 8px;
   margin: 5px;
@@ -91,7 +94,7 @@
   border-radius: 3px;
   transition: 0.5s all ease-in-out;
 }
-.product .product-info button.product-buy-btn:hover {
+.product .product-info .product-action button.btn-product:hover {
   opacity: 1;
 }
 .product .product-header-title {

@@ -15,7 +15,10 @@
                 <div class="product-separator"></div>
                 <div class="product-info">
                     <p class="product-sec-info">{{item.description}}</p>
-                    <button class="product-buy-btn" [style.background]="item.backgroundDark">Add to cart <i class="fa fa-cart-plus" aria-hidden="true"></i></button>
+                    <div class="product-action">
+                        <button class="product-info-btn btn-product" [style.background]="item.backgroundDark"><i class="fa fa-info" aria-hidden="true"></i></button>
+                        <button class="product-buy-btn btn-product" (click)="onClickAdd(item)" [style.background]="item.backgroundDark">Add to cart <i class="fa fa-cart-plus" aria-hidden="true"></i></button>
+                    </div>
                 </div>
             </div>
         </div>

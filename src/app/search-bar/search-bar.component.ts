@@ -2,7 +2,7 @@ import { filter, map } from 'rxjs/operators';
 import { ProductService } from './../get-products.service';
 import { Observable } from 'rxjs';
 import { ProductListComponent } from './../product-list/product-list.component';
-import { Product } from './../../models/products';
+import { Product } from './../../shared/models/products';
 import { Component, OnInit, Input } from '@angular/core';
 import { AbstractControl, FormBuilder, FormControl, FormGroup, Validators, ReactiveFormsModule, Form } from '@angular/forms';
 

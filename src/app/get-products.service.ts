@@ -2,7 +2,7 @@ import { EventEmitter } from '@angular/core';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
-import { Product } from '../models/products';
+import { Product } from '../shared/models/products';
 import { Observable, of, ReplaySubject, Subject } from 'rxjs';
 import { environment } from '../environments/environment';
 import { catchError, tap, map, filter} from 'rxjs/operators';
@@ -18,13 +18,10 @@ export class ProductService {
   private filteredProducts$: Subject<Product[]> = new ReplaySubject<Product[]>(1);
 
   getSearchResults(): Observable<Product[]> {
-    console.log(this.filteredProducts$);
     return this.filteredProducts$.asObservable();
   }
 
   searchProduct(searchTerm: any): Observable<void> {
-    console.log(searchTerm);
-    console.log(typeof searchTerm);
     return this.getProducts().pipe(
       // using tap to update the stream without changing any data
       tap((products: Product[]) => {
@@ -56,23 +53,19 @@ export class ProductService {
   }
 
   priceFilter(status: number): Observable<Product[]> {
-    console.log(status)
     return this.getProducts().pipe(
       tap((products : Product[]) => {
         products = products.sort((a,b) => {
           switch (status) {
             case 0:
-              console.log("here" + status);
               return a.price < b.price ? -1 : 1;
               break;
             case 1:
-              console.log("here" + status);
               return a.price > b.price ? -1 : 1;
               break;
             }
         });
         this.filteredProducts$.next(products);
-        console.log(products);
       }
       ),
       map(() => void 0)
@@ -80,7 +73,6 @@ export class ProductService {
   }
 
   nameFilter(status : number): Observable<Product[]> {
-    console.log('here');
     return this.getProducts().pipe(
       tap((products : Product[]) => {
         products = products.sort((a,b) => {
@@ -96,7 +88,6 @@ export class ProductService {
           }
         });
         this.filteredProducts$.next(products);
-        console.log(products);
       }),
       map(() => void 0)
     );

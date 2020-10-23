@@ -7,20 +7,29 @@ nav {
     padding-left: 35px;
     color: white;
     font-family: Arial;
-    ul {
+    justify-content: space-between;
+    .header-navigation {
         display: flex;
-        justify-content: flex-start;
         align-items: center;
-        li {
-            margin: 5px;
-            padding-left: 10px;
-            &.active {
-                font-weight: bold;
-            }
-            a {
-                text-decoration: none;
-                color: white;
+        ul {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            li {
+                margin: 5px;
+                padding-left: 10px;
+                &.active {
+                    font-weight: bold;
+                }
+                a {
+                    text-decoration: none;
+                    color: white;
+                }
             }
         }
+    }
+    .header-shopping-cart {
+        margin-right: 8em;
+        font-size: 1.5em;
     }
 }

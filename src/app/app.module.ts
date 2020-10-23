@@ -1,3 +1,5 @@
+import { ProductState } from './../shared/states/product-state';
+import { NgxsModule } from '@ngxs/store';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { ErrorInputDirective } from './customdirectives.directive';
@@ -45,6 +47,10 @@ const appRoutes: Routes = [
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    NgxsModule,
+    NgxsModule.forRoot([
+      ProductState
+    ]),
     RouterModule.forRoot(appRoutes),
   ],
   providers: [ProductService],

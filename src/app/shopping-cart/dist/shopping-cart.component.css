@@ -1,6 +1,6 @@
 :host > div {
   position: relative;
-  padding: 20px;
+  padding: 35px;
   box-shadow: -25px 0px 45px -5px rgba(200, 204, 181, 0.59);
   height: 100%;
   border-radius: 5px;
@@ -22,11 +22,30 @@
 :host .hide-cart {
   margin: 0;
   position: absolute;
-  top: 20%;
-  left: 0;
+  top: 10em;
+  left: -10px;
   cursor: pointer;
+  font-size: 2em;
+  color: #b9adada8;
+  transition: 0.5s all ease-in-out;
+}
+:host .hide-cart:hover {
+  color: #b5b5b5;
+}
+:host .cart-product-list {
+  width: 100%;
+}
+:host .cart-product-list .cart-product {
+  display: flex;
+  justify-content: space-between;
+}
+:host .cart-product-list .cart-product .cart-product-img .product-img {
+  max-height: 100px;
 }
 
 :host#shopping-cart-page {
   width: 100%;
+}
+:host#shopping-cart-page .hide-cart {
+  display: none;
 }

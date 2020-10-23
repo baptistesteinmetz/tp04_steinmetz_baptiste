@@ -7,14 +7,16 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 exports.__esModule = true;
 exports.ShoppingCartComponent = void 0;
+var product_state_1 = require("./../../shared/states/product-state");
 var rxjs_1 = require("rxjs");
 var animations_1 = require("@angular/animations");
 var core_1 = require("@angular/core");
 var ShoppingCartComponent = /** @class */ (function () {
-    function ShoppingCartComponent(router, _renderer, _elemRef) {
+    function ShoppingCartComponent(router, _renderer, _elemRef, store) {
         this.router = router;
         this._renderer = _renderer;
         this._elemRef = _elemRef;
+        this.store = store;
         // @HostBinding('class.homeLogo') isHome:boolean = false;
         this.stateHide = 'inactive';
         this.empty = true;
@@ -26,14 +28,18 @@ var ShoppingCartComponent = /** @class */ (function () {
     }
     ShoppingCartComponent.prototype.hideCart = function (event) {
         var _this = this;
-        var state = this.stateHide;
-        state == 'active' ? state = 'inactive' : state = 'active';
+        var switchState = this.stateHide;
+        switchState == 'active' ? switchState = 'inactive' : switchState = 'active';
         var timer$ = rxjs_1.timer(100);
         timer$.subscribe(function (t) {
-            _this.stateHide = state;
+            _this.stateHide = switchState;
         });
     };
     ShoppingCartComponent.prototype.ngOnInit = function () {
+        this.listProduct$ = this.store.select(function (state) { return state.listProducts.products; });
+        // Solution 1
+        this.nbProducts$ = this.store.select(product_state_1.ProductState.getNbProducts);
+        this.priceProducts$ = this.store.select(product_state_1.ProductState.getFullPriceProducts);
     };
     ShoppingCartComponent = __decorate([
         core_1.Component({
