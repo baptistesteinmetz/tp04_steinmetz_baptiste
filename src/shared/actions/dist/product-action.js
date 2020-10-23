@@ -1,6 +1,6 @@
 "use strict";
 exports.__esModule = true;
-exports.DelProduct = exports.AddProduct = void 0;
+exports.ShowProduct = exports.DelProduct = exports.AddProduct = void 0;
 var AddProduct = /** @class */ (function () {
     function AddProduct(payload) {
         this.payload = payload;
@@ -17,3 +17,11 @@ var DelProduct = /** @class */ (function () {
     return DelProduct;
 }());
 exports.DelProduct = DelProduct;
+var ShowProduct = /** @class */ (function () {
+    function ShowProduct(payload) {
+        this.payload = payload;
+    }
+    ShowProduct.type = '[Product] Show';
+    return ShowProduct;
+}());
+exports.ShowProduct = ShowProduct;

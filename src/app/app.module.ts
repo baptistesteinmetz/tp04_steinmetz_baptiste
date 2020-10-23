@@ -14,14 +14,20 @@ import { RecapComponent, PhonePipe, CodePipe } from './recap/recap.component';
 import { FormsModule, ReactiveFormsModule  } from '@angular/forms';
 import { ProductListComponent } from './product-list/product-list.component';
 import { SearchBarComponent } from './search-bar/search-bar.component';
-import { RouterModule, Routes } from '@angular/router';
+import { ChildrenOutletContexts, RouterModule, Routes } from '@angular/router';
 import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
 import { HeaderComponent } from './header/header.component';
 
 const appRoutes: Routes = [
   { path: 'tp02', component: FormComponent },
-  { path: 'tp03', component: ProductListComponent },
+  { path: 'tp03', component: ProductListComponent,
+  children: [
+    {
+      path: 'product/:id',
+      component: ProductDetailComponent,
+    }
+  ] },
   { path: 'tp04', component: ShoppingCartComponent },
   { path: '', component: ProductListComponent }
 ];

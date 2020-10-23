@@ -17,10 +17,13 @@ var ProductListComponent = /** @class */ (function () {
         this.loaded = true;
     }
     ProductListComponent.prototype.onClickAdd = function (product) {
-        this.addProduct(product.id, product.name, product.price, product.src, product.description, product.backgroundLight, product.backgroundDark);
+        // j'ai essayé de faire un truc pour avoir un identifiant unique permettant de supprimer qu'un seul produit si identique, mais ce n'est comme ça que ça marche
+        var identifier = new Date().getUTCMilliseconds();
+        product.uniqueId = identifier;
+        this.addProduct(product);
     };
-    ProductListComponent.prototype.addProduct = function (id, name, price, src, description, backgroundLight, backgroundDark) {
-        this.store.dispatch(new product_action_1.AddProduct({ id: id, name: name, price: price, src: src, description: description, backgroundLight: backgroundLight, backgroundDark: backgroundDark }));
+    ProductListComponent.prototype.addProduct = function (product) {
+        this.store.dispatch(new product_action_1.AddProduct(product));
     };
     ProductListComponent.prototype.ngOnInit = function () {
         // setTimeout(() => {

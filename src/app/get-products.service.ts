@@ -41,7 +41,15 @@ export class ProductService {
     );
   }
 
-  private getProducts(): Observable<Product[]> {
+  public getSingleProduct(id): Observable<Product> {
+     return this.getProducts().pipe(
+       map(product => product.find(prod => {
+         if(prod.id == id) return prod;
+       }))
+       );
+  }
+
+  public getProducts(): Observable<Product[]> {
     // return cached products
     if (this.products) {
       return of(this.products);

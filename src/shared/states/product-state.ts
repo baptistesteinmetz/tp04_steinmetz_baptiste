@@ -1,4 +1,5 @@
-import { AddProduct, DelProduct } from './../actions/product-action';
+import { Product } from './../../shared/models/products';
+import { AddProduct, DelProduct, ShowProduct } from './../actions/product-action';
 import { NgxsModule, Action, Selector, State, StateContext } from '@ngxs/store';
 import { ProductStateModel } from './product-state-model';
 
@@ -6,14 +7,15 @@ import { ProductStateModel } from './product-state-model';
 @State<ProductStateModel>({
   name: 'listProducts',
   defaults: {
-    products: []
+    products: [],
+    product: null,
   }
 })
 export class ProductState {
 
   @Selector()
-  static getProducts(state: ProductStateModel) {
-    return state.products;
+  static getProduct(id: number) {
+    // return state.products.find(x => x.id === id);
   }
 
   @Selector()
@@ -37,28 +39,40 @@ export class ProductState {
     { getState, patchState }: StateContext<ProductStateModel>,
     { payload }: AddProduct
   ) {
-    console.log('here')
     const state = getState();
-    patchState({
-      // créer un nouveau tableau
-      // l'opérateur ... permet de consituer une liste d'élement du tableau
-      products: [...state.products, payload],
-    });
-    console.log(state);
+    // if(!state.products.find((product)=> product.id === payload.id)){
+      // ProductState.getFullPriceProducts(state);
+      patchState({
+        // créer un nouveau tableau
+        // l'opérateur ... permet de consituer une liste d'élement du tableau
+        products: [...state.products, payload],
+      });
+    // }
+    console.log(state.products);
   }
 
   @Action(DelProduct)
   del(
     { getState, patchState }: StateContext<ProductStateModel>,
-    { payload }: DelProduct
+    { payload }: DelProduct,
   ) {
     const state = getState();
     patchState({
       // supprimer le payload dans users
-    //   products: state.products.filter(
-    //     // item => item.nom != payload.nom && item.prenom != payload.prenom
-    //   )
-    // });
-    })
-  }
+      products: state.products.filter(
+        item => item.id !== payload.id && item.uniqueId !== payload.uniqueId
+      )
+    });
+    }
+
+    @Action(ShowProduct)
+    show(
+      { getState, patchState }: StateContext<ProductStateModel>,
+      { payload }: ShowProduct
+    ) {
+      const state = getState();
+      patchState({
+        product: payload,
+      });
+    }
 }

@@ -5,7 +5,9 @@
         "src": "fifa21.jpg",
         "description": "It's FIFA... Like always.",
         "backgroundLight": "#42A5F5",
-        "backgroundDark": "#1565C0"
+        "backgroundDark": "#1565C0",
+        "uniqueId": "",
+        "numberOf": 0
     },
     {
         "id": 2,
@@ -14,7 +16,9 @@
         "src": "crash4.jpg",
         "description": "Our favorite Bandicoot is (supposed to be) back! He's not here on time, where the hell is he?",
         "backgroundLight": "#26C6DA",
-        "backgroundDark": "#00838F"
+        "backgroundDark": "#00838F",
+        "uniqueId": "",
+        "numberOf": 0
     },
     {
         "id": 3,
@@ -23,7 +27,9 @@
         "src": "spiderman.jpg",
         "description": "Spider-Man, Spider-Man, slinging through New-York on his webs",
         "backgroundLight": "#FFA726",
-        "backgroundDark": "#EF6C00"
+        "backgroundDark": "#EF6C00",
+        "uniqueId": "",
+        "numberOf": 0
     },
     {
         "id": 4,
@@ -32,7 +38,9 @@
         "src": "lastofus2.jpg",
         "description": "Five years later… An intense, harrowing and emotional adventure awaits Ellie and Joel.",
         "backgroundLight": "#FF7043",
-        "backgroundDark": "#D84315"
+        "backgroundDark": "#D84315",
+        "uniqueId": "",
+        "numberOf": 0
     },
     {
         "id": 5,
@@ -41,7 +49,9 @@
         "src": "ghost.jpg",
         "description": "The Rise of the Ghost: in his quest to reclaim tsushima, Jin must seek support from old friends and new unlikely allies.",
         "backgroundLight": "#9CCC65",
-        "backgroundDark": "#689F38"
+        "backgroundDark": "#689F38",
+        "uniqueId": "",
+        "numberOf": 0
     },
     {
         "id": 6,
@@ -50,7 +60,9 @@
         "src": "ff7.jpg",
         "description": "FINAL FANTASY VII REMAKE features a hybrid battle system that merges real-time action with strategic, command-based combat.",
         "backgroundLight": "#EC407A",
-        "backgroundDark": "#AD1457"
+        "backgroundDark": "#AD1457",
+        "uniqueId": "",
+        "numberOf": 0
     },
     {
         "id": 7,
@@ -59,7 +71,9 @@
         "src": "kh3.jpg",
         "description": "Travel across Disney and Pixar worlds to protect them from the Heartless invasion, and befriend and join heroes from Toy Story, Monsters Inc., Big Hero 6, Tangled, Hercules, and more.",
         "backgroundLight": "#26A69A",
-        "backgroundDark": "#00695C"
+        "backgroundDark": "#00695C",
+        "uniqueId": "",
+        "numberOf": 0
     },
     {
         "id": 8,
@@ -68,7 +82,9 @@
         "src": "reddead.jpg",
         "description": "Play as Arthur Morgan, lead enforcer in the notorious Van der Linde gang.",
         "backgroundLight": "#E0E0E0",
-        "backgroundDark": "#757575"
+        "backgroundDark": "#757575",
+        "uniqueId": "",
+        "numberOf": 0
     },
     {
         "id": 9,
@@ -77,6 +93,8 @@
         "src": "uncharted4.jpg",
         "description": "Embark on Nathan Drake's greatest adventure in a globe-trotting journey in pursuit of a historical conspiracy behind a fabled pirate treasure;",
         "backgroundLight": "#78909C",
-        "backgroundDark": "#455A64"
+        "backgroundDark": "#455A64",
+        "uniqueId": "",
+        "numberOf": 0
     }
 ]

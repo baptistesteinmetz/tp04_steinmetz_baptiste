@@ -7,6 +7,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 exports.__esModule = true;
 exports.ShoppingCartComponent = void 0;
+var product_action_1 = require("./../../shared/actions/product-action");
 var product_state_1 = require("./../../shared/states/product-state");
 var rxjs_1 = require("rxjs");
 var animations_1 = require("@angular/animations");
@@ -22,7 +23,6 @@ var ShoppingCartComponent = /** @class */ (function () {
         this.empty = true;
         // i want different styles depending on the route, since the shopping cart is shown on the store page (like amazon)
         if (this.router.url == '/tp04') {
-            console.log('prout');
             this._renderer.setAttribute(this._elemRef.nativeElement, 'id', 'shopping-cart-page');
         }
     }
@@ -40,6 +40,12 @@ var ShoppingCartComponent = /** @class */ (function () {
         // Solution 1
         this.nbProducts$ = this.store.select(product_state_1.ProductState.getNbProducts);
         this.priceProducts$ = this.store.select(product_state_1.ProductState.getFullPriceProducts);
+    };
+    ShoppingCartComponent.prototype.onClickRemove = function (product) {
+        this.removeItem(product);
+    };
+    ShoppingCartComponent.prototype.removeItem = function (product) {
+        this.store.dispatch(new product_action_1.DelProduct(product));
     };
     ShoppingCartComponent = __decorate([
         core_1.Component({

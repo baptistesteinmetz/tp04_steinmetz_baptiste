@@ -6,4 +6,6 @@ export class Product {
   description: string;
   backgroundLight: string;
   backgroundDark: string;
+  uniqueId: number;
+  numberOf: number;
 }

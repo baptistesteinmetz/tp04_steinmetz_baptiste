@@ -1,4 +1,11 @@
+import { filter, tap } from 'rxjs/operators';
+import { ProductService } from './../get-products.service';
+import { ProductState } from './../../shared/states/product-state';
+import { Observable } from 'rxjs';
+import { State, Store } from '@ngxs/store';
+import { Product } from './../../shared/models/products';
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-product-detail',
@@ -7,9 +14,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProductDetailComponent implements OnInit {
 
-  constructor() { }
+  product$: Observable<Product>;
+  singleProduct: Product;
+
+  constructor(private productService: ProductService, private route: ActivatedRoute, private router: Router, private store: Store) {
+
+   }
 
   ngOnInit(): void {
+    let id = this.route.snapshot.params.id;
+    this.product$ = this.productService.getSingleProduct(id);
+    this.productService.getSingleProduct(id).subscribe((product) => {
+      console.log(product);
+      this.singleProduct = product;
+    });
   }
 
 }

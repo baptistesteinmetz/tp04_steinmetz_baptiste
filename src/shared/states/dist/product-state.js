@@ -19,8 +19,8 @@ var store_1 = require("@ngxs/store");
 var ProductState = /** @class */ (function () {
     function ProductState() {
     }
-    ProductState.getProducts = function (state) {
-        return state.products;
+    ProductState.getProduct = function (id) {
+        // return state.products.find(x => x.id === id);
     };
     ProductState.getNbProducts = function (state) {
         return state.products.length;
@@ -37,25 +37,32 @@ var ProductState = /** @class */ (function () {
     ProductState.prototype.add = function (_a, _b) {
         var getState = _a.getState, patchState = _a.patchState;
         var payload = _b.payload;
-        console.log('here');
         var state = getState();
+        // if(!state.products.find((product)=> product.id === payload.id)){
+        // ProductState.getFullPriceProducts(state);
         patchState({
             // créer un nouveau tableau
             // l'opérateur ... permet de consituer une liste d'élement du tableau
             products: __spreadArrays(state.products, [payload])
         });
-        console.log(state);
+        // }
+        console.log(state.products);
     };
     ProductState.prototype.del = function (_a, _b) {
         var getState = _a.getState, patchState = _a.patchState;
         var payload = _b.payload;
         var state = getState();
         patchState({
-        // supprimer le payload dans users
-        //   products: state.products.filter(
-        //     // item => item.nom != payload.nom && item.prenom != payload.prenom
-        //   )
-        // });
+            // supprimer le payload dans users
+            products: state.products.filter(function (item) { return item.id !== payload.id && item.uniqueId !== payload.uniqueId; })
+        });
+    };
+    ProductState.prototype.show = function (_a, _b) {
+        var getState = _a.getState, patchState = _a.patchState;
+        var payload = _b.payload;
+        var state = getState();
+        patchState({
+            product: payload
         });
     };
     __decorate([
@@ -65,8 +72,11 @@ var ProductState = /** @class */ (function () {
         store_1.Action(product_action_1.DelProduct)
     ], ProductState.prototype, "del");
     __decorate([
+        store_1.Action(product_action_1.ShowProduct)
+    ], ProductState.prototype, "show");
+    __decorate([
         store_1.Selector()
-    ], ProductState, "getProducts");
+    ], ProductState, "getProduct");
     __decorate([
         store_1.Selector()
     ], ProductState, "getNbProducts");
@@ -77,7 +87,8 @@ var ProductState = /** @class */ (function () {
         store_1.State({
             name: 'listProducts',
             defaults: {
-                products: []
+                products: [],
+                product: null
             }
         })
     ], ProductState);

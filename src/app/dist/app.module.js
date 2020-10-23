@@ -29,7 +29,13 @@ var product_detail_component_1 = require("./product-detail/product-detail.compon
 var header_component_1 = require("./header/header.component");
 var appRoutes = [
     { path: 'tp02', component: form_component_1.FormComponent },
-    { path: 'tp03', component: product_list_component_1.ProductListComponent },
+    { path: 'tp03', component: product_list_component_1.ProductListComponent,
+        children: [
+            {
+                path: 'product/:id',
+                component: product_detail_component_1.ProductDetailComponent
+            }
+        ] },
     { path: 'tp04', component: shopping_cart_component_1.ShoppingCartComponent },
     { path: '', component: product_list_component_1.ProductListComponent }
 ];

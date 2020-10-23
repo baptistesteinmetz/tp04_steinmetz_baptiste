@@ -36,6 +36,12 @@ var ProductService = /** @class */ (function () {
             _this.filteredProducts$.next(products);
         }), operators_1.map(function () { return void 0; }));
     };
+    ProductService.prototype.getSingleProduct = function (id) {
+        return this.getProducts().pipe(operators_1.map(function (product) { return product.find(function (prod) {
+            if (prod.id == id)
+                return prod;
+        }); }));
+    };
     ProductService.prototype.getProducts = function () {
         var _this = this;
         // return cached products

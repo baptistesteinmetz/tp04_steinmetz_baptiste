@@ -1,6 +1,7 @@
+import { Product } from './../../shared/models/products';
+import { DelProduct } from './../../shared/actions/product-action';
 import { ProductState } from './../../shared/states/product-state';
 import { Store } from '@ngxs/store';
-import { Product } from '../../shared/models/products';
 import { Observable, of, timer } from 'rxjs';
 import { animate, state, style, transition, trigger } from '@angular/animations';
 import { Component, HostBinding, OnInit, Renderer2, ElementRef } from '@angular/core';
@@ -35,7 +36,6 @@ export class ShoppingCartComponent implements OnInit {
   constructor(private router: Router, private _renderer: Renderer2, private _elemRef : ElementRef, private store: Store) {
     // i want different styles depending on the route, since the shopping cart is shown on the store page (like amazon)
     if(this.router.url == '/tp04') {
-      console.log('prout');
       this._renderer.setAttribute(this._elemRef.nativeElement, 'id','shopping-cart-page' );
     }
 
@@ -58,4 +58,10 @@ export class ShoppingCartComponent implements OnInit {
     this.priceProducts$ = this.store.select(ProductState.getFullPriceProducts);
   }
 
+  onClickRemove(product) {
+    this.removeItem(product);
+  }
+  removeItem(product) {
+    this.store.dispatch(new DelProduct(product));
+  }
 }

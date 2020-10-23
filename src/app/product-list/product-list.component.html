@@ -1,4 +1,5 @@
-<app-search-bar [products]="products |async"></app-search-bar>
+<app-search-bar [products]="products |async">
+</app-search-bar>
 
 <div id="section-product-cart">
     <section id="section-product-list">
@@ -16,7 +17,7 @@
                 <div class="product-info">
                     <p class="product-sec-info">{{item.description}}</p>
                     <div class="product-action">
-                        <button class="product-info-btn btn-product" [style.background]="item.backgroundDark"><i class="fa fa-info" aria-hidden="true"></i></button>
+                        <a class="product-info-btn btn-product" [routerLink]="['product', item.id]" [style.background]="item.backgroundDark"><i class="fa fa-info" aria-hidden="true"></i></a>
                         <button class="product-buy-btn btn-product" (click)="onClickAdd(item)" [style.background]="item.backgroundDark">Add to cart <i class="fa fa-cart-plus" aria-hidden="true"></i></button>
                     </div>
                 </div>
