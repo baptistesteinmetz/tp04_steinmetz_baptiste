@@ -18,16 +18,12 @@ import { ChildrenOutletContexts, RouterModule, Routes } from '@angular/router';
 import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
 import { HeaderComponent } from './header/header.component';
+import { HomeComponent } from './home/home.component';
 
 const appRoutes: Routes = [
   { path: 'tp02', component: FormComponent },
-  { path: 'tp03', component: ProductListComponent,
-  children: [
-    {
-      path: 'product/:id',
-      component: ProductDetailComponent,
-    }
-  ] },
+  { path: 'tp03', component: ProductListComponent },
+  { path: 'product/:id', component: ProductDetailComponent },
   { path: 'tp04', component: ShoppingCartComponent },
   { path: '', component: ProductListComponent }
 ];
@@ -46,6 +42,7 @@ const appRoutes: Routes = [
     ShoppingCartComponent,
     ProductDetailComponent,
     HeaderComponent,
+    HomeComponent,
   ],
   imports: [
     NoopAnimationsModule,

@@ -57,12 +57,12 @@ export class ProductState {
     { payload }: DelProduct,
   ) {
     const state = getState();
-    patchState({
-      // supprimer le payload dans users
-      products: state.products.filter(
-        item => item.id !== payload.id && item.uniqueId !== payload.uniqueId
-      )
-    });
+    const index = state.products.indexOf(payload);
+    state.products.splice(index, 1);
+      patchState({
+      //   // supprimer le payload dans users
+      //   products: state.products
+      });
     }
 
     @Action(ShowProduct)

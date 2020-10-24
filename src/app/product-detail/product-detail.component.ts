@@ -1,3 +1,4 @@
+import { AddProduct } from './../../shared/actions/product-action';
 import { filter, tap } from 'rxjs/operators';
 import { ProductService } from './../get-products.service';
 import { ProductState } from './../../shared/states/product-state';
@@ -21,7 +22,16 @@ export class ProductDetailComponent implements OnInit {
 
    }
 
+  onClickAdd(product: Product) {
+    this.addProduct(product);
+  }
+
+  addProduct(product: Product) {
+      this.store.dispatch(new AddProduct(product));
+  }
+
   ngOnInit(): void {
+    console.log('here')
     let id = this.route.snapshot.params.id;
     this.product$ = this.productService.getSingleProduct(id);
     this.productService.getSingleProduct(id).subscribe((product) => {

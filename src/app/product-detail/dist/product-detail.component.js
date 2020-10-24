@@ -7,6 +7,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 exports.__esModule = true;
 exports.ProductDetailComponent = void 0;
+var product_action_1 = require("./../../shared/actions/product-action");
 var core_1 = require("@angular/core");
 var ProductDetailComponent = /** @class */ (function () {
     function ProductDetailComponent(productService, route, router, store) {
@@ -15,8 +16,15 @@ var ProductDetailComponent = /** @class */ (function () {
         this.router = router;
         this.store = store;
     }
+    ProductDetailComponent.prototype.onClickAdd = function (product) {
+        this.addProduct(product);
+    };
+    ProductDetailComponent.prototype.addProduct = function (product) {
+        this.store.dispatch(new product_action_1.AddProduct(product));
+    };
     ProductDetailComponent.prototype.ngOnInit = function () {
         var _this = this;
+        console.log('here');
         var id = this.route.snapshot.params.id;
         this.product$ = this.productService.getSingleProduct(id);
         this.productService.getSingleProduct(id).subscribe(function (product) {

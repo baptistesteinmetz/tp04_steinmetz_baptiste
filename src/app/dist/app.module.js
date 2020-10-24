@@ -27,15 +27,11 @@ var router_1 = require("@angular/router");
 var shopping_cart_component_1 = require("./shopping-cart/shopping-cart.component");
 var product_detail_component_1 = require("./product-detail/product-detail.component");
 var header_component_1 = require("./header/header.component");
+var home_component_1 = require("./home/home.component");
 var appRoutes = [
     { path: 'tp02', component: form_component_1.FormComponent },
-    { path: 'tp03', component: product_list_component_1.ProductListComponent,
-        children: [
-            {
-                path: 'product/:id',
-                component: product_detail_component_1.ProductDetailComponent
-            }
-        ] },
+    { path: 'tp03', component: product_list_component_1.ProductListComponent },
+    { path: 'product/:id', component: product_detail_component_1.ProductDetailComponent },
     { path: 'tp04', component: shopping_cart_component_1.ShoppingCartComponent },
     { path: '', component: product_list_component_1.ProductListComponent }
 ];
@@ -58,6 +54,7 @@ var AppModule = /** @class */ (function () {
                 shopping_cart_component_1.ShoppingCartComponent,
                 product_detail_component_1.ProductDetailComponent,
                 header_component_1.HeaderComponent,
+                home_component_1.HomeComponent,
             ],
             imports: [
                 animations_1.NoopAnimationsModule,

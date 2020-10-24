@@ -52,9 +52,11 @@ var ProductState = /** @class */ (function () {
         var getState = _a.getState, patchState = _a.patchState;
         var payload = _b.payload;
         var state = getState();
+        var index = state.products.indexOf(payload);
+        state.products.splice(index, 1);
         patchState({
-            // supprimer le payload dans users
-            products: state.products.filter(function (item) { return item.id !== payload.id && item.uniqueId !== payload.uniqueId; })
+        //   // supprimer le payload dans users
+        //   products: state.products
         });
     };
     ProductState.prototype.show = function (_a, _b) {
