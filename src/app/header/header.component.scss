@@ -31,5 +31,12 @@ nav {
     .header-shopping-cart {
         margin-right: 8em;
         font-size: 1.5em;
+        a {
+            width: 50px;
+            display: flex;
+            justify-content: space-around;
+            text-decoration: none;
+            color: white;
+        }
     }
 }

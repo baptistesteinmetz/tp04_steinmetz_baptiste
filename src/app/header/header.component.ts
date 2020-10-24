@@ -1,7 +1,7 @@
 import { Observable } from 'rxjs';
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngxs/store';
-import { ProductState } from './../../shared/states/product-state';
+import { ProductState } from '../../shared/states/product-state';
 
 @Component({
   selector: 'app-header',
