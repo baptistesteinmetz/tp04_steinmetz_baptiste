@@ -17,7 +17,7 @@ var core_1 = require("@angular/core");
 var get_products_service_1 = require("./get-products.service");
 var app_component_1 = require("./app.component");
 var header_form_component_1 = require("./header-form/header-form.component");
-var footer_component_1 = require("./footer/footer.component");
+var footer_form_component_1 = require("./footer-form/footer-form.component");
 var form_component_1 = require("./form/form.component");
 var recap_component_1 = require("./recap/recap.component");
 var forms_1 = require("@angular/forms");
@@ -43,7 +43,7 @@ var AppModule = /** @class */ (function () {
             declarations: [
                 app_component_1.AppComponent,
                 header_form_component_1.HeaderFormComponent,
-                footer_component_1.FooterComponent,
+                footer_form_component_1.FooterComponent,
                 form_component_1.FormComponent,
                 recap_component_1.RecapComponent,
                 customdirectives_directive_1.ErrorInputDirective,

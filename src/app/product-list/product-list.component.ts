@@ -24,9 +24,6 @@ export class ProductListComponent implements OnInit {
 
 
   onClickAdd(product: Product) {
-    // j'ai essayé de faire un truc pour avoir un identifiant unique permettant de supprimer qu'un seul produit si identique, mais ce n'est comme ça que ça marche
-    let identifier = new Date().getUTCMilliseconds();
-    product.uniqueId = identifier;
     this.addProduct(product);
   }
 

@@ -8,7 +8,7 @@ import { NgModule } from '@angular/core';
 import { ProductService } from './get-products.service';
 import { AppComponent } from './app.component';
 import { HeaderFormComponent } from './header-form/header-form.component';
-import { FooterComponent } from './footer/footer.component';
+import { FooterComponent } from './footer-form/footer-form.component';
 import { FormComponent } from './form/form.component';
 import { RecapComponent, PhonePipe, CodePipe } from './recap/recap.component';
 import { FormsModule, ReactiveFormsModule  } from '@angular/forms';

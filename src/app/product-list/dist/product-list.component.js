@@ -17,9 +17,6 @@ var ProductListComponent = /** @class */ (function () {
         this.loaded = true;
     }
     ProductListComponent.prototype.onClickAdd = function (product) {
-        // j'ai essayé de faire un truc pour avoir un identifiant unique permettant de supprimer qu'un seul produit si identique, mais ce n'est comme ça que ça marche
-        var identifier = new Date().getUTCMilliseconds();
-        product.uniqueId = identifier;
         this.addProduct(product);
     };
     ProductListComponent.prototype.addProduct = function (product) {
