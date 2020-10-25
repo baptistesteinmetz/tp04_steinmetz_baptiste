@@ -1,3 +1,4 @@
+import { CommonModule } from '@angular/common';
 import { UserAccountRoutingModule } from './user-account-routing.module';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -20,6 +21,7 @@ import { HeaderFormComponent } from './header-form/header-form.component';
   ],
   imports: [
     // AppModule,
+    CommonModule,
     FormsModule,
     ReactiveFormsModule,
     UserAccountRoutingModule

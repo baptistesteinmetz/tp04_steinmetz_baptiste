@@ -7,6 +7,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 exports.__esModule = true;
 exports.UserAccountModule = void 0;
+var common_1 = require("@angular/common");
 var user_account_routing_module_1 = require("./user-account-routing.module");
 var core_1 = require("@angular/core");
 var forms_1 = require("@angular/forms");
@@ -31,6 +32,7 @@ var UserAccountModule = /** @class */ (function () {
             ],
             imports: [
                 // AppModule,
+                common_1.CommonModule,
                 forms_1.FormsModule,
                 forms_1.ReactiveFormsModule,
                 user_account_routing_module_1.UserAccountRoutingModule
