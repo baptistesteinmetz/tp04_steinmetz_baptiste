@@ -17,6 +17,7 @@ var http_1 = require("@angular/common/http");
 var core_1 = require("@angular/core");
 var app_component_1 = require("./app.component");
 var router_1 = require("@angular/router");
+var home_component_1 = require("./home/home.component");
 var AppModule = /** @class */ (function () {
     function AppModule() {
     }
@@ -24,7 +25,8 @@ var AppModule = /** @class */ (function () {
         core_1.NgModule({
             declarations: [
                 app_component_1.AppComponent,
-                header_component_1.HeaderComponent
+                header_component_1.HeaderComponent,
+                home_component_1.HomeComponent
             ],
             imports: [
                 app_routing_module_1.AppRoutingModule,

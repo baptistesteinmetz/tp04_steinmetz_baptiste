@@ -52,7 +52,7 @@
 :host .cart-product-list .cart-product .cart-product-info .cart-product-actions {
   display: flex;
   justify-content: space-between;
-  align-items: end;
+  align-items: flex-end;
 }
 :host .cart-product-list .cart-product .cart-product-info .btn-delete {
   padding: 0;
